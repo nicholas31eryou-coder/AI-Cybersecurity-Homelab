@@ -43,7 +43,7 @@ Current focus:
 
 **Status:** Version 1.0 (Current)
 
-This architecture represents the initial implementation of the AI Cybersecurity Homelab and is based on the YouTube tutorial serving as the project's foundation.
+This architecture represents the initial implementation of the AI Cybersecurity Homelab.
 
 <img width="1536" height="1024" alt="a1285cf5-1688-425c-944f-8b2961afdf28" src="https://github.com/user-attachments/assets/0fe37196-efdd-4a89-a4fc-9d68ef36b08d" />
 
