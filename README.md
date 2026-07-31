@@ -179,7 +179,6 @@ diagrams/
 docs/
 logs/
 reports/
-screenshots/
 scripts/
 services/
 
