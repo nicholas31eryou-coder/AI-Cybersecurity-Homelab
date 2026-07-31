@@ -4,25 +4,38 @@ This document tracks planned work, active tasks, and completed milestones.
 
 ---
 
-# Planned
+Phase 1
 
-- Install Kali Linux
-- Build Ubuntu Server logging VM
-- Design virtual networking
-- Deploy AI agent
-- Configure centralized logging
-- Implement attack simulations
-- Build detection rules
-- Document architecture
+☑ Repository
 
----
+☑ Documentation
 
-# In Progress
+☑ Kali
 
-*(None)*
+☑ Architecture
+
+⬜ Ubuntu
 
 ---
 
-# Completed
+Phase 2
 
-- GitHub repository created
+⬜ Logging
+
+⬜ AI
+
+⬜ Detection
+
+⬜ Automation
+
+---
+
+Phase 3
+
+⬜ SIEM
+
+⬜ Threat Hunting
+
+⬜ AI Workflows
+
+⬜ Portfolio
