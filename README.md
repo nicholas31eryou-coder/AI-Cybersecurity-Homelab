@@ -83,20 +83,31 @@ Current focus:
 ```text
 AI-Cybersecurity-Homelab/
 
+README.md
+CHANGELOG.md
+DECISIONS.md
+TODO.md
+LICENSE
+
 architecture/
 configs/
 diagrams/
 docs/
+│
+├── PROJECT.md
+├── ARCHITECTURE.md
+├── VIRTUALIZATION.md
+├── SERVICES.md
+├── TROUBLESHOOTING.md
+├── LESSONS_LEARNED.md
+└── RESEARCH.md
+
 logs/
 reports/
 screenshots/
 scripts/
 services/
-
-MASTER_DOCUMENTATION.md
-CHANGELOG.md
-DECISIONS.md
-TODO.md
+```
 ```
 
 ---
