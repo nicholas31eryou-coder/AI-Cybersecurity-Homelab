@@ -2,83 +2,167 @@
 
 ### Enterprise AI-Powered Cybersecurity Laboratory
 
-*A continuously evolving cybersecurity homelab designed to develop hands-on expertise in offensive security, defensive security, AI-assisted threat detection, security automation, and enterprise infrastructure.*
+*A continuously evolving cybersecurity homelab focused on offensive security, defensive monitoring, self-hosted artificial intelligence, detection engineering, automation, and professional documentation.*
 
 ---
 
-![Project Status](https://img.shields.io/badge/Status-In%20Development-blue)
+![Status](https://img.shields.io/badge/Status-In%20Development-blue)
 ![VirtualBox](https://img.shields.io/badge/Virtualization-VirtualBox-2F61B4)
-![Kali Linux](https://img.shields.io/badge/Kali-Linux-557C94)
 ![Ubuntu](https://img.shields.io/badge/Ubuntu-Server-E95420)
+![Kali](https://img.shields.io/badge/Kali-Linux-557C94)
 ![Python](https://img.shields.io/badge/Python-3.x-3776AB)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
 ---
 
-### Core Focus Areas
+# Project Overview
+
+The AI Cybersecurity Homelab is an enterprise-inspired learning environment designed to simulate modern Security Operations Center (SOC) workflows using offensive security, defensive monitoring, artificial intelligence, and automation.
+
+The project is being built incrementally to develop practical experience in cybersecurity engineering, Linux administration, detection engineering, infrastructure design, Python automation, and locally hosted AI.
+
+Rather than relying on cloud-based AI services, the long-term goal is to build a modular, self-hosted AI platform capable of assisting with log analysis, anomaly detection, threat hunting, and future security automation.
+
+---
+
+# Current Project Status
+
+**Status:** 🚧 In Development
+
+Current Progress
+
+- ✅ GitHub repository established
+- ✅ Documentation framework completed
+- ✅ Reference architecture documented
+- ✅ Kali Linux attacker VM deployed
+- 🚧 Ubuntu Server deployment in progress
+- 🚧 Self-hosted AI infrastructure planning
+- 🚧 Detection engineering development
+
+---
+
+# Core Focus Areas
 
 - 🔴 Offensive Security
 - 🔵 Defensive Security
-- 🤖 AI Agents & Automation
+- 🤖 Self-Hosted Artificial Intelligence
 - 📊 Detection Engineering
 - 🔍 Threat Hunting
+- ⚙️ Security Automation
 - 🌐 Enterprise Infrastructure
 - 📚 Technical Documentation
 
 ---
 
-### 🏗️ Current Reference Architecture
+# Current Topology
 
+The current architecture represents the first implementation of the homelab.
 
-**Status:** Version 1.0 (Current)
+It follows a simple linear pipeline that can be expanded as additional services are introduced.
 
-<img width="1448" height="1086" alt="15285380-d69a-45ef-a738-ee854e8cee53" src="https://github.com/user-attachments/assets/c01fd4ba-4b43-4afb-9863-9f0920554ba4" />
+<img width="1637" height="961" alt="d6be2a74-63c2-435e-b458-f01ada76df1d" src="https://github.com/user-attachments/assets/1ca370c7-2166-4cdd-965d-9b6a576970a3" />
 
+```
 
-It currently consists of:
+The architecture currently consists of:
 
-1. Kali Linux Attacker VM
-2. Ubuntu Internal Server running Python automation
-3. AIRIA AI Create Agent
-4. Published AIRIA AI Agent
+1. Kali Linux attacker workstation
+2. Ubuntu Server for centralized log collection and Python automation
+3. Self-hosted Llama-based AI layer
+4. AI-assisted detection and analysis
 
-This architecture will evolve as additional components are implemented throughout the project.
-
----
-
-## Project Overview
-
-This project documents the design, implementation, and continuous improvement of a professional AI-enabled cybersecurity home lab.
-
-The objective is to simulate enterprise environments while developing hands-on experience with:
-
-- Offensive Security
-- Defensive Security
-- Detection Engineering
-- Threat Hunting
-- AI Security
-- System Administration
-- Infrastructure Design
-- Security Automation
-- Technical Documentation
+Future services (SIEM, SOAR, XDR, etc.) will be integrated after the core platform has been completed.
 
 ---
 
-## Current Project Status
+# Artificial Intelligence Architecture
 
-**Status:** 🚧 In Development
+Unlike the original reference tutorial, this project is evolving toward a fully self-hosted AI platform.
 
-Current focus:
+Current design goals include:
 
-- Virtual infrastructure
-- Kali Linux attacker workstation
-- Ubuntu centralized logging server
-- ARIA AI agent
-- Documentation framework
+- Local LLM inference
+- Python API integration
+- Retrieval-Augmented Generation (RAG)
+- Threat intelligence enrichment
+- AI-assisted anomaly detection
+- Security recommendations
+- Vendor-independent architecture
+
+Current planned model
+
+- **Llama 3 8B Instruct**
+
+The AI layer will serve as the analytical component of the homelab while all security telemetry remains under local control.
 
 ---
 
-## Repository Structure
+# Technologies
+
+## Virtualization
+
+- Oracle VirtualBox
+
+## Operating Systems
+
+- Kali Linux
+- Ubuntu Server
+
+## Programming
+
+- Python
+- Bash
+
+## Artificial Intelligence
+
+- Llama 3 8B Instruct
+- Local LLM Inference
+- Retrieval-Augmented Generation (RAG)
+- Python API Integration
+
+## Offensive Security
+
+- Nmap
+- Metasploit
+- Burp Suite
+- Wireshark
+
+## Detection Engineering
+
+- Sigma
+- YARA
+- MITRE ATT&CK
+
+## Planned Integrations
+
+- Kibana
+- Filebeat
+- Logstash
+- Elasticsearch
+- Suricata
+- Zeek
+
+---
+
+# Documentation
+
+Project documentation is maintained throughout the entire development lifecycle.
+
+Engineering documentation is centralized within the **docs/** directory and separated by subject to improve maintainability.
+
+Current documentation includes:
+
+- Project
+- Architecture
+- Virtualization
+- Services
+- Troubleshooting
+- Lessons Learned
+- Research
+
+---
+
+# Repository Structure
 
 ```text
 AI-Cybersecurity-Homelab/
@@ -93,7 +177,13 @@ architecture/
 configs/
 diagrams/
 docs/
-│
+logs/
+reports/
+screenshots/
+scripts/
+services/
+
+docs/
 ├── PROJECT.md
 ├── ARCHITECTURE.md
 ├── VIRTUALIZATION.md
@@ -101,58 +191,58 @@ docs/
 ├── TROUBLESHOOTING.md
 ├── LESSONS_LEARNED.md
 └── RESEARCH.md
-
-logs/
-reports/
-screenshots/
-scripts/
-services/
-```
 ```
 
 ---
 
-## Technologies (Planned)
+# Project Roadmap
 
-### Virtualization
+## Phase 1
 
-- Oracle VirtualBox
+- Deploy virtual infrastructure
+- Configure Kali Linux
+- Deploy Ubuntu Server
+- Build documentation
 
-### Operating Systems
+## Phase 2
 
-- Kali Linux
-- Ubuntu Server
+- Configure centralized logging
+- Python automation
+- Deploy self-hosted Llama
+- AI integration
 
-### Programming
+## Phase 3
 
-- Python
-- Bash
+- Detection engineering
+- Threat hunting
+- AI-assisted analysis
+- Automated reporting
 
-### Artificial Intelligence
+## Phase 4
 
-- ARIA AI Agent
-- Local LLMs (planned)
-
-### Cybersecurity
-
-- Nmap
-- Wireshark
-- Burp Suite
-- Metasploit
-- Wazuh (planned)
-- Sigma
-- YARA
-- Suricata
-- Zeek
+- Additional security tooling
+- Advanced attack simulations
+- Knowledge base expansion
+- Portfolio refinement
 
 ---
 
-## Documentation
+# Project Philosophy
 
-Project documentation is maintained throughout development to reflect architectural decisions, configurations, deployments, troubleshooting, and lessons learned.
+This project follows an incremental engineering approach.
+
+Each milestone is:
+
+1. Planned
+2. Implemented
+3. Tested
+4. Documented
+5. Committed
+
+The objective is to create not only a functional cybersecurity laboratory but also a professional engineering portfolio that demonstrates architecture design, implementation, documentation, and continuous improvement.
 
 ---
 
-## License
+# License
 
 Released under the MIT License.
