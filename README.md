@@ -34,7 +34,51 @@
 
 This architecture represents the initial implementation of the AI Cybersecurity Homelab.
 
-<img width="1536" height="1024" alt="a1285cf5-1688-425c-944f-8b2961afdf28" src="https://github.com/user-attachments/assets/0fe37196-efdd-4a89-a4fc-9d68ef36b08d" />
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                    AI CYBERSECURITY HOMELAB                                  │
+│              Reference Architecture (Version 1.0)                            │
+├──────────────────────────────────────────────────────────────────────────────┤
+
+        🔴                       🔵                      🟣                     🟢
+┌───────────────┐      ┌─────────────────┐      ┌────────────────┐     ┌───────────────┐
+│               │      │                 │      │                │     │               │
+│  👤💻          │ ---> │   🖥️            │ ---> │      🧠        │ --->│      🤖      │
+│               │      │                 │      │                │     │               │
+│ Attacker      │      │ Internal Server │      │ AIRIA Create   │     │ Published AI  │
+│ Machine       │      │ Ubuntu Server   │      │ Agent          │     │ Agent         │
+│ Kali Linux    │      │ Python          │      │                │     │               │
+│               │      │                 │      │                │     │               │
+│ Generates     │      │ Collects Logs   │      │ Configures AI  │     │ AI Analysis   │
+│ Attack Events │      │ Preprocesses    │      │ Workflow       │     │ Recommendations│
+│ Runs Tools    │      │ Stores Data     │      │                │     │               │
+└───────────────┘      └─────────────────┘      └────────────────┘     └───────────────┘
+
+──────────────────────────────────────────────────────────────────────────────
+
+Attack Activity
+        │
+        ▼
+Logs & Events
+        │
+        ▼
+Log Collection & Preprocessing
+        │
+        ▼
+AI Workflow Configuration
+        │
+        ▼
+Published AI Analysis
+
+──────────────────────────────────────────────────────────────────────────────
+
+Legend
+
+🔴 Attack Source
+🔵 Infrastructure
+🟣 AI Configuration
+🟢 AI Operations
+
+Version 1.0 • Reference Tutorial Architecture
 
 It currently consists of:
 
