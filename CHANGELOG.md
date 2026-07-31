@@ -1,10 +1,10 @@
 # Change Log
 
-## Version 0.1.0
+## Version 0.1.0 - 2026-07-31
 
 - Repository initialized.
 
-## [0.1.1] - 2026-07-31
+## Version 0.1.1 - 2026-07-31
 
 ### Changed
 
