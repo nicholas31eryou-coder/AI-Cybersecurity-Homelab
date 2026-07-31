@@ -1,7 +1,31 @@
-# AI Cybersecurity Homelab
+# 🛡️ AI Cybersecurity Homelab
 
-> Enterprise-grade AI Cybersecurity Homelab built to develop practical skills in offensive security, defensive security, AI-assisted detection, automation, and security engineering.
+### Enterprise AI-Powered Cybersecurity Laboratory
 
+*A continuously evolving cybersecurity homelab designed to develop hands-on expertise in offensive security, defensive security, AI-assisted threat detection, security automation, and enterprise infrastructure.*
+
+---
+
+![Project Status](https://img.shields.io/badge/Status-In%20Development-blue)
+![VirtualBox](https://img.shields.io/badge/Virtualization-VirtualBox-2F61B4)
+![Kali Linux](https://img.shields.io/badge/Kali-Linux-557C94)
+![Ubuntu](https://img.shields.io/badge/Ubuntu-Server-E95420)
+![Python](https://img.shields.io/badge/Python-3.x-3776AB)
+![License](https://img.shields.io/badge/License-MIT-green)
+
+---
+
+### Core Focus Areas
+
+- 🔴 Offensive Security
+- 🔵 Defensive Security
+- 🤖 AI Agents & Automation
+- 📊 Detection Engineering
+- 🔍 Threat Hunting
+- 🌐 Enterprise Infrastructure
+- 📚 Technical Documentation
+
+---
 ---
 
 ## Project Overview
