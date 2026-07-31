@@ -1,37 +1,96 @@
 # Troubleshooting
 
-## 2026-07-31
+This document records issues encountered during the design, deployment, and operation of the AI Cybersecurity Homelab.
 
-### Ubuntu Server Installation
-
-#### Issue
-
-Keyboard-only navigation during the Ubuntu Server installer.
-
-#### Symptoms
-
-Unable to use a mouse during portions of the installation.
-
-#### Resolution
-
-Used keyboard navigation to complete the installer.
-
-Status
-
-Resolved.
+Each entry includes the symptoms, root cause, resolution, and any preventative actions.
 
 ---
 
-## Kali Linux VM
+# 2026-07-31
 
-### Issue
+## Issue 1 — VirtualBox Guest Operating System Detection
 
-Selecting the correct VirtualBox guest operating system.
+### Status
 
-#### Resolution
+✅ Resolved
 
-Configured the VM using the closest supported operating system profile after VirtualBox did not identify Kali Linux directly.
+### Component
 
-Status
+VirtualBox
 
-Resolved.
+### Symptoms
+
+VirtualBox did not automatically identify the Kali Linux ISO as a Kali Linux operating system and instead suggested Ubuntu.
+
+### Root Cause
+
+VirtualBox does not always correctly detect Kali Linux installation media.
+
+### Resolution
+
+Configured the virtual machine using the closest supported Linux profile and manually completed the remaining virtual machine configuration.
+
+### Preventative Action
+
+Always verify the guest operating system settings instead of relying solely on automatic detection.
+
+---
+
+## Issue 2 — GitHub Documentation Structure
+
+### Status
+
+✅ Resolved
+
+### Component
+
+Repository Documentation
+
+### Symptoms
+
+Project documentation was initially maintained within a single `MASTER_DOCUMENTATION.md` file.
+
+As documentation expanded, the file became increasingly difficult to maintain and navigate.
+
+### Root Cause
+
+The original documentation structure was not designed to scale with the size of the project.
+
+### Resolution
+
+Reorganized documentation into a centralized `docs/` directory containing individual documents for each major engineering topic.
+
+### Preventative Action
+
+Separate documentation by subject area early in the project to improve maintainability.
+
+---
+
+## Issue 3 — AI Platform Selection
+
+### Status
+
+✅ Resolved
+
+### Component
+
+Architecture
+
+### Symptoms
+
+The original reference architecture relied on a vendor-hosted AI workflow.
+
+### Root Cause
+
+While suitable as a learning reference, the architecture introduced vendor dependency and recurring operational costs.
+
+### Resolution
+
+Transitioned the project toward a self-hosted Llama-based AI architecture.
+
+### Preventative Action
+
+Evaluate architectural trade-offs before committing to long-term platform dependencies.
+
+---
+
