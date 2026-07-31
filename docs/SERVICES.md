@@ -123,11 +123,7 @@ The following services are planned for future implementation as the homelab evol
 | Ubuntu Server | 🚧 In Progress |
 | Self-Hosted LLM (Llama 3 8B Instruct) | 📋 Planned |
 | Detection & Analytics | 📋 Planned |
-| Filebeat | 📋 Planned |
-| Logstash | 📋 Planned |
-| Elasticsearch | 📋 Planned |
 | Kibana | 📋 Planned |
-| Suricata | 📋 Planned |
 | Zeek | 📋 Planned |
 
 ---
