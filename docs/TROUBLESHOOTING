@@ -1,0 +1,37 @@
+# Troubleshooting
+
+## 2026-07-31
+
+### Ubuntu Server Installation
+
+#### Issue
+
+Keyboard-only navigation during the Ubuntu Server installer.
+
+#### Symptoms
+
+Unable to use a mouse during portions of the installation.
+
+#### Resolution
+
+Used keyboard navigation to complete the installer.
+
+Status
+
+Resolved.
+
+---
+
+## Kali Linux VM
+
+### Issue
+
+Selecting the correct VirtualBox guest operating system.
+
+#### Resolution
+
+Configured the VM using the closest supported operating system profile after VirtualBox did not identify Kali Linux directly.
+
+Status
+
+Resolved.
