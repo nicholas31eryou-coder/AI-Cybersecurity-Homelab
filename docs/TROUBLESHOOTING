@@ -94,3 +94,28 @@ Evaluate architectural trade-offs before committing to long-term platform depend
 
 ---
 
+## Issue 4 — GitHub Integration Write Access
+
+### Status
+
+⚠️ Open
+
+### Component
+
+GitHub Integration
+
+### Symptoms
+
+Repository contents could be read successfully, however automated write operations returned a GitHub integration authorization error.
+
+### Root Cause
+
+The GitHub integration available during development did not have functional write access to the repository.
+
+### Current Workaround
+
+Documentation changes are prepared locally and committed manually.
+
+### Future Action
+
+Re-evaluate repository integration if write access becomes available.
