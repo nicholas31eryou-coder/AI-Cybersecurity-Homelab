@@ -27,7 +27,7 @@
 
 ---
 
-## ## 🏗️ Current Reference Architecture
+### 🏗️ Current Reference Architecture
 
 
 **Status:** Version 1.0 (Current)
