@@ -26,6 +26,25 @@
 - 📚 Technical Documentation
 
 ---
+
+## ## 🏗️ Current Reference Architecture
+
+
+**Status:** Version 1.0 (Current)
+
+This architecture represents the initial implementation of the AI Cybersecurity Homelab.
+
+<img width="1536" height="1024" alt="a1285cf5-1688-425c-944f-8b2961afdf28" src="https://github.com/user-attachments/assets/0fe37196-efdd-4a89-a4fc-9d68ef36b08d" />
+
+It currently consists of:
+
+1. Kali Linux Attacker VM
+2. Ubuntu Internal Server running Python automation
+3. AIRIA AI Create Agent
+4. Published AIRIA AI Agent
+
+This architecture will evolve as additional components are implemented throughout the project.
+
 ---
 
 ## Project Overview
@@ -57,28 +76,6 @@ Current focus:
 - Ubuntu centralized logging server
 - ARIA AI agent
 - Documentation framework
-
----
-
-## ## Architecture
-
-### Current Reference Architecture
-
-
-**Status:** Version 1.0 (Current)
-
-This architecture represents the initial implementation of the AI Cybersecurity Homelab.
-
-<img width="1536" height="1024" alt="a1285cf5-1688-425c-944f-8b2961afdf28" src="https://github.com/user-attachments/assets/0fe37196-efdd-4a89-a4fc-9d68ef36b08d" />
-
-It currently consists of:
-
-1. Kali Linux Attacker VM
-2. Ubuntu Internal Server running Python automation
-3. AIRIA AI Create Agent
-4. Published AIRIA AI Agent
-
-This architecture will evolve as additional components are implemented throughout the project.
 
 ---
 
