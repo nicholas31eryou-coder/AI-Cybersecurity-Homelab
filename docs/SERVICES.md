@@ -1,10 +1,8 @@
 # Services
 
-## Status
+## Purpose
 
-**Current Services:** In Development
-
-This document describes the services that make up the AI Cybersecurity Homelab and their responsibilities.
+This document describes the primary services and components currently used or being implemented within the AI Cybersecurity Homelab.
 
 ---
 
@@ -12,124 +10,115 @@ This document describes the services that make up the AI Cybersecurity Homelab a
 
 ## Kali Linux VM
 
-**Status:** ✅ Confirmed
+**Status:** ✅ Deployed
 
 ### Role
 
-Primary attacker workstation.
+Primary threat actor workstation.
 
 ### Responsibilities
 
-- Penetration testing
-- Vulnerability assessment
-- Attack simulation
-- Security tool execution
-- Traffic generation
-- Adversary emulation
+- Execute offensive security tools
+- Generate controlled attack activity
+- Perform attack simulations
+- Generate network traffic and security telemetry
+- Support detection testing
 
 ---
 
-# Infrastructure Services
+# Infrastructure
 
 ## Ubuntu Server
 
-**Status:** 🚧 In Progress
+**Status:** 🚧 In Development
 
 ### Role
 
-Central infrastructure and automation server.
+Central processing and automation server.
 
 ### Responsibilities
 
-- Central log collection
-- Python automation
-- Data preprocessing
-- Security monitoring
-- AI integration
-- Future service orchestration
+- Collect security telemetry
+- Run Python automation
+- Process captured data
+- Generate structured security alerts
+- Interface with the local AI environment
 
 ---
 
 # Artificial Intelligence
 
-## Self-Hosted LLM
+## Ollama
 
-**Status:** 🚧 Planned
-
-### Planned Model
-
-**Llama 3 8B Instruct**
+**Status:** 🚧 In Development
 
 ### Role
 
-Local AI analysis platform.
+Local LLM runtime.
 
 ### Responsibilities
 
-- Log analysis
-- Threat analysis
-- AI-assisted investigations
-- Security recommendations
-- Natural language querying
-- Future Retrieval-Augmented Generation (RAG)
+- Host and run the selected language model
+- Provide local model inference
+- Provide an interface for Python automation
+- Keep AI processing within the homelab environment
 
 ---
 
-# Detection & Analytics
+## Llama
+
+**Status:** 🚧 In Development
+
+### Role
+
+Language model used for AI-assisted security analysis.
+
+### Responsibilities
+
+- Analyze structured security alerts
+- Assist with threat classification
+- Assess security events
+- Generate security recommendations
+- Produce structured SOC analysis
+
+---
+
+# Security Processing
+
+## Python Automation
 
 **Status:** 📋 Planned
 
-Future responsibilities include:
+### Role
 
-- Detection engineering
-- Threat correlation
-- Anomaly detection
-- Security reporting
-- AI-assisted investigations
+Processing and integration layer between collected security telemetry and the local AI environment.
 
----
+### Responsibilities
 
-# Planned Services
-
-The following services are planned for future implementation as the homelab evolves:
-
-## Logging
-
-- Filebeat
-- Logstash
-
-## Search & Analytics
-
-- Elasticsearch
-- Kibana
-
-## Network Security
-
-- Suricata
-- Zeek
-
-## Detection Engineering
-
-- Sigma Rules
-- YARA Rules
+- Process collected security data
+- Analyze captured traffic
+- Generate structured alert data
+- Submit alerts to Ollama
+- Receive and store AI-generated analysis
 
 ---
 
-# Service Roadmap
+# Current Service Flow
 
-| Service | Status |
-|----------|--------|
-| Kali Linux VM | ✅ Confirmed |
-| Ubuntu Server | 🚧 In Progress |
-| Self-Hosted LLM (Llama 3 8B Instruct) | 📋 Planned |
-| Detection & Analytics | 📋 Planned |
-| Kibana | 📋 Planned |
-| Zeek | 📋 Planned |
-
----
-
-# Notes
-
-Services will be documented in greater detail as they are deployed and validated.
-
-The architecture is intentionally modular, allowing individual services to be added, replaced, or removed without affecting the overall design.
+```text
+Kali Linux VM
+      │
+      ▼
+Ubuntu Server
+      │
+      ▼
+Python Automation
+      │
+      ▼
+Ollama
+      │
+      ▼
+Llama
+      │
+      ▼
+Security Analysis
