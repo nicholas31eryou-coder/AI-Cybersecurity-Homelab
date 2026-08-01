@@ -58,9 +58,9 @@ Central processing and automation server
 
 - Collect system and security logs
 - Execute Python automation
-- Normalize and preprocess data
+- Process captured data
+- Generate structured security alerts
 - Interface with the local AI layer
-- Coordinate supporting services
 
 ---
 
@@ -70,17 +70,23 @@ Central processing and automation server
 
 Artificial intelligence analysis platform
 
-### Planned Model
+### Runtime
+
+**Ollama**
+
+### Model
 
 **Llama 3 8B Instruct**
 
 ### Responsibilities
 
-- Analyze collected telemetry
+- Provide local LLM inference
+- Analyze structured security alerts
+- Assist with threat classification
+- Generate security recomendations
+- Support AI-assisted security analysis
 - Detect anomalous behaviour
 - Assist threat hunting
-- Generate recommendations
-- Support future Retrieval-Augmented Generation (RAG)
 
 ---
 
@@ -111,7 +117,7 @@ Ubuntu Server
             │
             ▼
 Self-Hosted AI Layer
-(Llama 3)
+(Ollama + Llama)
             │
             ▼
 Detection & Analysis
@@ -119,11 +125,48 @@ Detection & Analysis
 
 ---
 
+# Processing Workflow
+
+
+
+The current implementation adapts the processing workflow from the original reference tutorial while replacing the vendor-hosted AI component with local inference.
+
+```text
+Kali Linux
+     │
+     ▼
+Network Activity
+     │
+     ▼
+Ubuntu Server
+     │
+     ▼
+Traffic Capture
+     │
+     ▼
+Python Processing
+     │
+     ▼
+Structured Alert JSON
+     │
+     ▼
+Ollama + Llama
+     │
+     ▼
+SOC Analysis
+```
+
+Python automation acts as the integration layer between collected security telemetry and the self-hosted AI environment.
+
+The processing workflow is responsible for converting captured activity into structured alert data that can be submitted to the local language model for analysis.
+---
+
 # Reference Architecture (Version 1.0)
 
-The original implementation followed the AIRIA cybersecurity tutorial.
-
+The current implementation adapts the processing workflow from my original concept while replacing the vendor-hosted AI component with local inference.
 Reference data flow:
+
+
 
 ```text
 Kali Linux
@@ -147,35 +190,25 @@ This architecture served as the initial learning platform and established the ba
 The project transitioned away from the AIRIA workflow to a self-hosted LLM architecture in order to:
 
 - Increase architectural flexibility
-- Maintain complete ownership of security data
-- Experiment with multiple language models
+- Maintain local control of security data
+- Reduce recurring operational costs
 - Reduce vendor dependency
+- Experiment with different language models
 - Better understand AI infrastructure
-- Support future AI research and experimentation
+
+The core security workflow remains closely based on the reference implementation while the AI processing component has been redesigned for local inference.
 
 ---
 
 # Future Expansion
 
-The architecture has been intentionally designed to accommodate additional services as the homelab evolves.
+The architecture is intentionally designed to support additional capabilities as the homelab develops.
 
-Planned future integrations include:
+Future expansion may include:
 
-- Centralized logging platform
-- SIEM capabilities
-- Threat intelligence feeds
-- Detection engineering tools
+- Centralized logging
+- Detection engineering
+- Threat intelligence
 - Knowledge base / RAG
 - Security automation
-- Additional AI models
-- Enterprise monitoring
-
----
-
-# Document Status
-
-**Current Architecture:** Active
-
-**Reference Architecture:** Preserved for historical reference
-
-This document will be updated as major architectural milestones are completed.
+- Additional defensive monitoring
