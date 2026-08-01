@@ -31,7 +31,7 @@ Each component has a clearly defined responsibility and can be replaced or expan
 
 ---
 
-# Current Planned Architecture
+# Current Architecture
 
 ## 1. Threat Actor (Kali Linux VM)
 
@@ -106,6 +106,31 @@ Security analytics
 
 ---
 
+# Implementation Status
+
+The architecture is being implemented incrementally. As of 2026-08-01, the local AI analysis layer has been successfully validated.
+
+## Verified Components
+
+The following processing path has been tested successfully:
+
+```text
+Security Event
+      │
+      ▼
+Python SOC Client
+      │
+      ▼
+Ollama API
+      │
+      ▼
+Llama 3 8B Instruct
+      │
+      ▼
+AI SOC Analysis
+
+---
+
 # Current Data Flow
 
 ```text
@@ -125,12 +150,12 @@ Detection & Analysis
 
 ---
 
-# Processing Workflow
+# Target Processing Workflow
 
 
+The target processing workflow extends the verified local AI analysis pipeline by connecting it to security telemetry generated within the HomeLab.
 
-The current implementation adapts the processing workflow from the original reference tutorial while replacing the vendor-hosted AI component with local inference.
-
+The telemetry collection, detection, and alert-generation stages are the next implementation phase and should not yet be considered fully operational.
 ```text
 Kali Linux
      │

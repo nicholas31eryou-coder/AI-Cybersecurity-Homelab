@@ -50,7 +50,7 @@ Central processing and automation server.
 
 ## Ollama
 
-**Status:** 🚧 In Development
+**Status:** ✅ Operational
 
 ### Role
 
@@ -67,7 +67,7 @@ Local LLM runtime.
 
 ## Llama
 
-**Status:** 🚧 In Development
+**Status:** ✅ Operational
 
 ### Role
 
@@ -87,7 +87,7 @@ Language model used for AI-assisted security analysis.
 
 ## Python Automation
 
-**Status:** 📋 Planned
+**Status:** 🚧 In Development
 
 ### Role
 

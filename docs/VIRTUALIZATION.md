@@ -48,6 +48,12 @@ The Kali Linux virtual machine is used to generate controlled attack activity ag
 
 **Status:** 🚧 In Development
 
+### Current Resources
+
+- **vCPUs:** 8
+- **CPU allocation status:** Verified
+- **Reason for current allocation:** Increased to improve local LLM inference performance
+
 ### Role
 
 Central processing and automation server.
