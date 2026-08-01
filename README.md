@@ -27,17 +27,22 @@ Rather than relying on cloud-based AI services, the long-term goal is to build a
 
 # Current Project Status
 
-**Status:** 🚧 In Development
+**Status:** 🚧 In Development  
+**Current Milestone:** Version 0.2.0 — Local AI SOC Analysis Operational
 
 Current Progress
 
-- ✅ GitHub repository established
-- ✅ Documentation framework completed
-- ✅ Reference architecture documented
+- ✅ GitHub repository and documentation framework established
 - ✅ Kali Linux attacker VM deployed
-- 🚧 Ubuntu Server deployment in progress
-- 🚧 Self-hosted AI infrastructure planning
-- 🚧 Detection engineering development
+- ✅ Ubuntu Server deployed and remotely administered through SSH
+- ✅ Self-hosted Ollama inference service operational
+- ✅ Llama 3 8B Instruct deployed for local security analysis
+- ✅ Python-to-Ollama integration verified
+- ✅ AI-generated SOC analysis successfully tested
+- ✅ VM resources optimized for local LLM inference
+- 🚧 Real security telemetry integration in progress
+- 🚧 Detection and alert pipeline development
+- 📋 Detection engineering and threat-hunting expansion planned
 
 ---
 
@@ -91,9 +96,9 @@ Current design goals include:
 
 Current planned model
 
-- **Llama 3 8B Instruct**
+- **Llama 3 8B Instruct** -- Operational
 
-The AI layer will serve as the analytical component of the homelab while all security telemetry remains under local control.
+The AI layer serves as the analytical component of the current pipeline, with security telemetry integration being developed to extend the system into an end-to-end AI-assisted SOC workflow.
 
 ---
 
