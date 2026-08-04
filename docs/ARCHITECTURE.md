@@ -1,124 +1,124 @@
 # Architecture
 
-## Status
-
-**Current Architecture:** Version 2.0 (In Development)
-
-**Reference Architecture:** Version 1.0 (Archived Reference)
-
----
-
-# Purpose
-
-This document describes the logical architecture of the AI Cybersecurity Homelab and how it has evolved throughout the project.
-
-The homelab began by following the AIRIA cybersecurity tutorial as an initial reference implementation. As the project matured, the architecture shifted toward a modular, self-hosted AI platform to provide greater flexibility, privacy, and educational value.
+> **Current Architecture:** Version 2.0
+>
+> **Status:** IN DEVELOPMENT
+>
+> **Current Milestone:** v0.2.0 – Local AI SOC Analysis Operational
 
 ---
 
-# Architecture Philosophy
+# Overview
 
-The homelab follows several engineering principles:
+This document describes the logical architecture of the AI Cybersecurity HomeLab and the relationships between its major components.
 
-- Modular design
+The HomeLab is designed as a modular cybersecurity environment that combines offensive security, defensive monitoring, Python automation, and self-hosted artificial intelligence. Each component has a clearly defined responsibility, allowing the platform to expand incrementally as additional capabilities are implemented and verified.
+
+---
+
+# Architecture Principles
+
+The HomeLab follows several core engineering principles:
+
+- Modular architecture
 - Self-hosted where practical
-- Vendor-independent architecture
 - Incremental implementation
-- AI-assisted security operations
-- Continuous documentation
+- Evidence-based documentation
+- Separation of verified and planned capabilities
+- Professional engineering documentation
 
-Each component has a clearly defined responsibility and can be replaced or expanded without redesigning the entire platform.
+Each milestone is implemented, tested, verified, documented, and committed before additional functionality is introduced.
 
 ---
 
 # Current Architecture
 
-## 1. Threat Actor (Kali Linux VM)
+The current verified implementation consists of five primary components.
+
+## 1. Kali Linux Virtual Machine
 
 ### Role
 
-Attacker workstation
+Authorized attack simulation workstation.
 
 ### Responsibilities
 
-- Generate attack activity
-- Execute offensive security tools
-- Produce realistic security telemetry
+- Generate controlled attack activity
+- Perform network reconnaissance
 - Simulate adversary techniques
+- Produce security events for testing
 
 ---
 
-## 2. Ubuntu Server
+## 2. Ubuntu Server Virtual Machine
 
 ### Role
 
-Central processing and automation server
+Central processing and automation server.
 
 ### Responsibilities
 
-- Collect system and security logs
 - Execute Python automation
-- Process captured data
-- Generate structured security alerts
-- Interface with the local AI layer
+- Host the Ollama service
+- Process security events
+- Coordinate AI-assisted analysis
+- Support future telemetry processing
 
 ---
 
-## 3. Self-Hosted AI Layer
+## 3. Python Automation Layer
 
 ### Role
 
-Artificial intelligence analysis platform
-
-### Runtime
-
-**Ollama**
-
-### Model
-
-**Llama 3 8B Instruct**
+Integration layer between security data and artificial intelligence.
 
 ### Responsibilities
 
-- Provide local LLM inference
-- Analyze structured security alerts
-- Assist with threat classification
-- Generate security recomendations
-- Support AI-assisted security analysis
-- Detect anomalous behaviour
-- Assist threat hunting
+- Process security events
+- Communicate with the Ollama API
+- Submit requests for AI analysis
+- Receive and present AI-generated results
 
 ---
 
-## 4. Detection & Analysis
+## 4. Ollama
 
 ### Role
 
-Security analytics
+Local large language model (LLM) inference runtime.
 
 ### Responsibilities
 
-- Threat correlation
-- Detection engineering
-- AI-assisted investigations
-- Security reporting
-- Future automation
+- Host local language models
+- Process requests from Python
+- Return AI-generated SOC analysis
 
 ---
 
-# Implementation Status
+## 5. Llama 3 8B Instruct
 
-The architecture is being implemented incrementally. As of 2026-08-01, the local AI analysis layer has been successfully validated.
+### Role
 
-## Verified Components
+Local language model responsible for cybersecurity analysis.
 
-The following processing path has been tested successfully:
+### Responsibilities
+
+- Analyze supplied security events
+- Assess severity
+- Generate findings
+- Recommend response actions
+
+---
+
+# Current Verified Workflow
+
+The following processing path has been successfully tested and verified.
 
 ```text
 Security Event
       │
       ▼
-Python SOC Client
+Python
       │
       ▼
 Ollama API
@@ -128,112 +128,108 @@ Llama 3 8B Instruct
       │
       ▼
 AI SOC Analysis
-
----
-
-# Current Data Flow
-
-```text
-Threat Actor (Kali Linux VM)
-            │
-            ▼
-Ubuntu Server
-(Log Collection & Python Automation)
-            │
-            ▼
-Self-Hosted AI Layer
-(Ollama + Llama)
-            │
-            ▼
-Detection & Analysis
 ```
 
+This workflow represents the current v0.2.0 milestone.
+
 ---
 
-# Target Processing Workflow
+# Component Relationships
 
-
-The target processing workflow extends the verified local AI analysis pipeline by connecting it to security telemetry generated within the HomeLab.
-
-The telemetry collection, detection, and alert-generation stages are the next implementation phase and should not yet be considered fully operational.
 ```text
-Kali Linux
-     │
-     ▼
-Network Activity
-     │
-     ▼
+Kali Linux VM
+        │
+        │ (Generates Security Activity)
+        ▼
 Ubuntu Server
-     │
-     ▼
-Traffic Capture
-     │
-     ▼
-Python Processing
-     │
-     ▼
-Structured Alert JSON
-     │
-     ▼
-Ollama + Llama
-     │
-     ▼
-SOC Analysis
+        │
+        ├── Python Automation
+        │
+        ▼
+Ollama
+        │
+        ▼
+Llama 3 8B Instruct
+        │
+        ▼
+AI SOC Analysis
 ```
 
-Python automation acts as the integration layer between collected security telemetry and the self-hosted AI environment.
+At the current stage of development, the AI workflow begins with a supplied security event. Integration with live HomeLab telemetry is the next planned milestone.
 
-The processing workflow is responsible for converting captured activity into structured alert data that can be submitted to the local language model for analysis.
 ---
 
-# Reference Architecture (Version 1.0)
+# Current Limitations
 
-The current implementation adapts the processing workflow from my original concept while replacing the vendor-hosted AI component with local inference.
-Reference data flow:
+The following capabilities are not yet part of the verified implementation:
 
+- Real security telemetry ingestion
+- Detection and alert pipeline
+- Centralized logging
+- Threat intelligence enrichment
+- Automated reporting
+- AI-assisted threat hunting
 
+These capabilities remain **IN DEVELOPMENT** or **PLANNED** and are intentionally documented separately from the verified architecture.
+
+---
+
+# Target Architecture
+
+The long-term objective is an end-to-end AI-assisted SOC workflow.
 
 ```text
 Kali Linux
-        │
-        ▼
-Ubuntu Server
-        │
-        ▼
-AIRIA Create
-        │
-        ▼
-Published AIRIA Agent
+      │
+      ▼
+Authorized Attack Simulation
+      │
+      ▼
+Security Telemetry
+      │
+      ▼
+Detection / Alert
+      │
+      ▼
+Python Automation
+      │
+      ▼
+Ollama API
+      │
+      ▼
+Llama 3 8B Instruct
+      │
+      ▼
+AI SOC Analysis
 ```
 
-This architecture served as the initial learning platform and established the baseline for the homelab. The project has since transitioned toward a self-hosted AI architecture while retaining the reference implementation for historical documentation.
+The transition from manually supplied security events to real telemetry integration is the current architectural focus.
 
 ---
 
-# Architecture Evolution
+# Architectural Decisions
 
-The project transitioned away from the AIRIA workflow to a self-hosted LLM architecture in order to:
+Key engineering decisions include:
 
-- Increase architectural flexibility
-- Maintain local control of security data
-- Reduce recurring operational costs
-- Reduce vendor dependency
-- Experiment with different language models
-- Better understand AI infrastructure
-
-The core security workflow remains closely based on the reference implementation while the AI processing component has been redesigned for local inference.
+- Self-hosted AI instead of cloud-hosted AI services
+- Python as the primary automation language
+- Ubuntu Server as the central processing platform
+- Modular documentation structure
+- Incremental, evidence-based development
+- Preservation of verified milestones and historical engineering decisions
 
 ---
 
 # Future Expansion
 
-The architecture is intentionally designed to support additional capabilities as the homelab develops.
-
-Future expansion may include:
+The architecture is designed to support future integration of additional defensive and analytical capabilities, including:
 
 - Centralized logging
 - Detection engineering
-- Threat intelligence
-- Knowledge base / RAG
-- Security automation
+- Threat intelligence enrichment
+- Retrieval-Augmented Generation (RAG)
 - Additional defensive monitoring
+- Automated reporting
+- AI-assisted incident investigation
+
+Future components will be documented only after implementation and verification.
