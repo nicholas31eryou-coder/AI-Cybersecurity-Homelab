@@ -1,124 +1,209 @@
 # Services
 
-## Purpose
-
-This document describes the primary services and components currently used or being implemented within the AI Cybersecurity Homelab.
+> **Status:** IN DEVELOPMENT
 
 ---
 
-# Offensive Security
+# Overview
 
-## Kali Linux VM
+This document describes the primary services currently implemented within the AI Cybersecurity HomeLab and the role each service performs within the overall architecture.
 
-**Status:** ✅ Deployed
+The HomeLab follows a modular design where each service has a clearly defined responsibility. New services are introduced only after they have been implemented, tested, and verified.
 
-### Role
+---
 
-Primary threat actor workstation.
+# Current Services
+
+## Kali Linux
+
+**Status:** VERIFIED
+
+### Purpose
+
+Authorized attack simulation platform.
 
 ### Responsibilities
 
-- Execute offensive security tools
+- Perform network reconnaissance
 - Generate controlled attack activity
-- Perform attack simulations
-- Generate network traffic and security telemetry
-- Support detection testing
+- Produce security events for testing
+- Support detection validation
+
+### Dependencies
+
+- Oracle VirtualBox
 
 ---
 
-# Infrastructure
-
 ## Ubuntu Server
 
-**Status:** 🚧 In Development
+**Status:** VERIFIED
 
-### Role
+### Purpose
 
 Central processing and automation server.
 
 ### Responsibilities
 
-- Collect security telemetry
-- Run Python automation
-- Process captured data
-- Generate structured security alerts
-- Interface with the local AI environment
+- Execute Python automation
+- Host the Ollama service
+- Process security events
+- Coordinate AI-assisted SOC analysis
+- Support future telemetry processing
+
+### Dependencies
+
+- Oracle VirtualBox
+- OpenSSH Server
+- Python
+- Ollama
 
 ---
 
-# Artificial Intelligence
+## OpenSSH
 
-## Ollama
+**Status:** VERIFIED
 
-**Status:** ✅ Operational
+### Purpose
 
-### Role
-
-Local LLM runtime.
+Provides secure remote administration of the Ubuntu Server.
 
 ### Responsibilities
 
-- Host and run the selected language model
-- Provide local model inference
-- Provide an interface for Python automation
-- Keep AI processing within the homelab environment
+- Remote server administration
+- Command-line access
+- System maintenance
+
+### Dependencies
+
+- Ubuntu Server
 
 ---
-
-## Llama
-
-**Status:** ✅ Operational
-
-### Role
-
-Language model used for AI-assisted security analysis.
-
-### Responsibilities
-
-- Analyze structured security alerts
-- Assist with threat classification
-- Assess security events
-- Generate security recommendations
-- Produce structured SOC analysis
-
----
-
-# Security Processing
 
 ## Python Automation
 
-**Status:** 🚧 In Development
+**Status:** VERIFIED
 
-### Role
+### Purpose
 
-Processing and integration layer between collected security telemetry and the local AI environment.
+Acts as the automation and integration layer between security events and the local AI environment.
 
 ### Responsibilities
 
-- Process collected security data
-- Analyze captured traffic
-- Generate structured alert data
-- Submit alerts to Ollama
-- Receive and store AI-generated analysis
+- Process supplied security events
+- Communicate with the Ollama API
+- Receive AI-generated analysis
+- Present AI SOC analysis
+
+### Dependencies
+
+- Ubuntu Server
+- Ollama
+- Python Virtual Environment
 
 ---
 
-# Current Service Flow
+## Ollama
+
+**Status:** VERIFIED
+
+### Purpose
+
+Provides local large language model (LLM) inference.
+
+### Responsibilities
+
+- Host local language models
+- Receive requests from Python
+- Return AI-generated SOC analysis
+
+### Dependencies
+
+- Ubuntu Server
+- Llama 3 8B Instruct
+
+---
+
+## Llama 3 8B Instruct
+
+**Status:** VERIFIED
+
+### Purpose
+
+Provides AI-assisted cybersecurity analysis.
+
+### Responsibilities
+
+- Analyze supplied security events
+- Assess event severity
+- Generate security findings
+- Recommend response actions
+
+### Dependencies
+
+- Ollama
+
+---
+
+# Current Verified Service Flow
 
 ```text
-Kali Linux VM
+Security Event
       │
       ▼
-Ubuntu Server
+Python
+      │
+      ▼
+Ollama API
+      │
+      ▼
+Llama 3 8B Instruct
+      │
+      ▼
+AI SOC Analysis
+```
+
+---
+
+# Services In Development
+
+The following services are currently being developed and are **not yet part of the verified implementation**.
+
+- Real security telemetry ingestion
+- Detection and alert pipeline
+- Centralized logging
+- Threat intelligence enrichment
+- AI-assisted threat hunting
+- Automated reporting
+
+These services will be documented after implementation and verification.
+
+---
+
+# Next Milestone
+
+The next service integration milestone is connecting real HomeLab-generated security telemetry to the existing verified AI analysis pipeline.
+
+Target processing flow:
+
+```text
+Kali Linux
+      │
+      ▼
+Authorized Attack Simulation
+      │
+      ▼
+Security Telemetry
+      │
+      ▼
+Detection / Alert
       │
       ▼
 Python Automation
       │
       ▼
-Ollama
+Ollama API
       │
       ▼
-Llama
-      │
-      ▼
-Security Analysis
+AI SOC Analysis
+```
