@@ -1,144 +1,220 @@
-# AI Cybersecurity Homelab
+# AI Cybersecurity HomeLab
 
-> **Status:** 🚧 Initial Implementation
+> **Status:** 🚧 In Development
+>
+> **Current Version:** v0.2.0
+>
+> **Current Phase:** Real Telemetry Integration
 
 ---
 
 # Project Overview
 
-The AI Cybersecurity Homelab is an enterprise-inspired learning environment designed to develop practical experience in offensive security, defensive security, artificial intelligence, and security automation.
+The AI Cybersecurity HomeLab is an enterprise-inspired learning environment designed to develop practical experience in offensive security, defensive monitoring, Linux administration, Python automation, self-hosted artificial intelligence, and security engineering.
 
-The project combines virtual machines, attack simulation, security telemetry, Python automation, and AI-assisted analysis into a continuously evolving cybersecurity laboratory.
+The project combines virtualized infrastructure, authorized attack simulation, security telemetry, automation, and AI-assisted analysis into a continuously evolving cybersecurity laboratory.
 
-Rather than focusing on a single technology, the objective is to understand how modern security operations integrate infrastructure, detection, automation, and artificial intelligence.
+Rather than focusing on a single technology, the objective is to understand how modern Security Operations Centers (SOCs) integrate infrastructure, detection engineering, automation, and artificial intelligence to improve security operations.
+
+The project is developed incrementally, with each milestone being planned, implemented, tested, documented, and committed before moving to the next phase.
 
 ---
 
 # Project Objectives
 
-The primary objectives are:
+The primary objectives of this HomeLab are to:
 
-- Develop hands-on cybersecurity skills
-- Learn Linux and virtual infrastructure administration
-- Build an AI-assisted security analysis workflow
-- Perform controlled attack simulations
+- Develop practical cybersecurity skills through hands-on implementation
+- Build and administer Linux-based infrastructure
+- Design and operate a self-hosted AI-assisted SOC analysis workflow
+- Perform authorized attack simulations
 - Generate and analyze security telemetry
-- Implement defensive monitoring
-- Explore detection engineering
-- Develop security automation using Python
-- Gain experience operating a locally hosted LLM
+- Develop Python-based security automation
+- Explore detection engineering concepts
+- Evaluate locally hosted LLMs for cybersecurity use cases
 - Produce professional engineering documentation
-- Build a portfolio-quality GitHub repository
+- Build a portfolio-quality GitHub repository that demonstrates real implementation work
 
 ---
 
 # Current Project Status
 
-## Phase
+## Current Phase
 
-**Initial Implementation**
+**Real Telemetry Integration**
 
-## Completed
+The local AI analysis pipeline has been successfully implemented and verified.
 
-- GitHub repository created
-- Centralized documentation framework established
-- Reference architecture documented
-- Kali Linux attacker VM deployed
-- Project transitioned from the AIRIA reference workflow toward a self-hosted AI architecture
+The next milestone is connecting real HomeLab-generated security telemetry to the existing AI workflow.
 
-## In Progress
+---
 
-- Ubuntu Server configuration
-- Ollama deployment
-- Local LLM deployment and testing
-- Python security automation preparation
-- Adaptation of the reference AI workflow for local inference
+## Verified
+
+- GitHub repository established
+- Modular documentation framework
+- Kali Linux attacker virtual machine
+- Ubuntu Server virtual machine
+- SSH remote administration
+- Python virtual environment
+- Self-hosted Ollama inference service
+- Llama 3 8B Instruct deployment
+- Python to Ollama API communication
+- AI-assisted SOC analysis generation
+- Ubuntu Server optimized for local LLM inference (8 vCPUs)
+
+---
+
+## In Development
+
+- Real security telemetry integration
+- Detection and alert processing pipeline
+- Python telemetry processing
+- End-to-end AI-assisted SOC workflow
+
+---
 
 ## Planned
 
-- Network traffic collection
-- Security telemetry processing
-- Alert JSON generation
-- Ollama API integration
-- Llama-based SOC analysis
-- AI-assisted anomaly detection
-- Attack simulation and validation
+- Centralized logging
 - Detection engineering
-- Additional defensive security tooling
+- Threat hunting
+- Structured AI JSON output
+- Threat intelligence enrichment
+- Additional defensive monitoring
+- Automated reporting
+- Security knowledge base (RAG)
+- Evaluation of AI SOC analysis accuracy
 
 ---
 
 # Project Scope
 
-The current homelab focuses on:
+The HomeLab currently focuses on the following technical domains:
 
 - Offensive Security
-- Defensive Security
-- AI-Assisted Analysis
-- Linux Infrastructure
+- Defensive Monitoring
+- Self-Hosted Artificial Intelligence
+- Linux Administration
 - Virtualization
-- Security Telemetry
 - Python Automation
 - Detection Engineering
+- Security Telemetry
 - Technical Documentation
 
-The project is intentionally developed incrementally. Additional technologies and services will be introduced only as the core architecture is implemented and validated.
+Future technologies will be introduced only after they have been implemented, tested, and documented.
 
 ---
 
-# Current Implementation Direction
+# Current Architecture
 
-The current implementation follows a four-stage architecture:
+The current verified implementation consists of:
 
-1. **Threat Actor — Kali Linux VM**
-2. **Ubuntu Server — Log Collection and Python Automation**
-3. **Self-Hosted AI — Ollama and Llama**
-4. **Detection and Analysis**
+1. Kali Linux virtual machine for authorized attack simulation
+2. Ubuntu Server virtual machine for Python automation and AI processing
+3. Ollama local inference runtime
+4. Llama 3 8B Instruct
+5. AI-assisted SOC analysis
 
-The Ubuntu Server acts as the central processing system between generated security activity and the local AI layer.
+### Current Verified Workflow
 
-Python automation will be used to process collected telemetry, generate structured alerts, and submit relevant security information to the locally hosted AI model for analysis.
+Security Event
+
+↓
+
+Python
+
+↓
+
+Ollama API
+
+↓
+
+Llama 3 8B Instruct
+
+↓
+
+AI SOC Analysis
 
 ---
 
-# Reference Implementation
+# Current Development Direction
 
-The project originally began from an AIRIA AI cybersecurity tutorial.
+The current implementation begins with a supplied security event.
 
-The tutorial architecture is preserved as:
+The next milestone is expanding the workflow into a complete AI-assisted SOC pipeline:
 
-**Reference Architecture Version 1.0**
+Kali Linux
 
-It established the original workflow and serves as a learning reference rather than the final architecture of the homelab.
+↓
 
-The project has since diverged from the vendor-hosted AI portion of the reference implementation.
+Authorized Attack Simulation
+
+↓
+
+Security Telemetry
+
+↓
+
+Detection / Alert
+
+↓
+
+Python Automation
+
+↓
+
+Ollama API
+
+↓
+
+AI SOC Analysis
 
 ---
 
-# Self-Hosted AI Direction
+# Artificial Intelligence
 
-The current architecture replaces the vendor-hosted AI component of the reference implementation with a locally hosted AI environment.
+Unlike the original reference implementation, this project uses a fully self-hosted AI environment.
 
-The planned AI stack consists of:
+Current verified AI components include:
 
-- **Ollama** — Local LLM runtime
-- **Llama** — Language model for security analysis
-- **Python** — Integration and automation layer
+- Ollama
+- Llama 3 8B Instruct
+- Python integration
 
-This approach allows security telemetry to remain within the homelab while providing hands-on experience with local AI infrastructure and API integration.
+Future AI development will focus on:
+
+- Structured responses
+- Threat intelligence enrichment
+- Retrieval-Augmented Generation (RAG)
+- AI-assisted investigation
+- Model evaluation and prompt optimization
 
 ---
 
 # Engineering Philosophy
 
-The project follows an incremental engineering approach.
+This project follows an incremental engineering methodology.
 
-Each implementation milestone is:
+Every milestone follows the same process:
 
-1. Planned
-2. Implemented
-3. Validated
-4. Documented
-5. Committed to GitHub
+1. Plan
+2. Implement
+3. Test
+4. Verify
+5. Document
+6. Commit
+7. Begin the next milestone
 
-Documentation is maintained alongside implementation to preserve architectural decisions, troubleshooting history, research, and lessons learned throughout the project lifecycle.
+Documentation is maintained alongside implementation to preserve architectural decisions, troubleshooting history, research, lessons learned, and evidence for every verified milestone.
+
+Project documentation distinguishes between:
+
+- VERIFIED
+- CONFIRMED
+- IN DEVELOPMENT
+- PLANNED
+- ASSUMED
+- DEPRECATED
+
+This ensures that future goals are clearly separated from completed engineering work while preserving the historical evolution of the HomeLab.
