@@ -1,63 +1,135 @@
-# Research Notes
+# Research
 
-## Current References
+> This document records technical research performed during the development of the AI Cybersecurity HomeLab.
 
-### AIRIA AI Cybersecurity Tutorial
+The purpose of this document is to document research topics, engineering evaluations, and technical decisions that influence the direction of the project.
 
-Purpose
+Research supports implementation but does not replace testing or verification. Features are documented as operational only after successful implementation and validation.
 
-Reference implementation for the initial architecture.
+---
 
-Status
-
-# AI Model Selection Research
+# Artificial Intelligence Research
 
 ## Objective
 
-Identify an AI solution suitable for a self-hosted cybersecurity homelab.
+Evaluate locally hosted AI technologies suitable for AI-assisted cybersecurity analysis.
 
 ---
 
-## Initial Approach
+## AI Platform Evaluation
 
-The project initially evaluated a vendor-hosted AI workflow as part of the reference architecture.
+### Research Question
 
-While this provided a useful introduction to AI-assisted security operations, it introduced long-term considerations related to recurring costs, vendor dependency, and reduced control over the AI environment.
+Should the HomeLab use a cloud-hosted AI platform or a self-hosted large language model?
 
----
+### Evaluation
 
-## Research Findings
+Both approaches were considered during the early design of the project.
 
-The project shifted toward a self-hosted open-weight large language model to achieve:
+Cloud-hosted AI platforms provide rapid deployment but introduce considerations such as recurring costs, vendor dependency, and reduced control over infrastructure.
 
-- Zero recurring licensing costs for local inference
-- Greater control over the AI infrastructure
-- Improved data privacy by processing telemetry locally
-- Flexibility to evaluate multiple AI models
-- Better understanding of deploying and operating LLMs
+Self-hosted AI environments require additional setup and infrastructure management but provide greater flexibility and complete local control over processing.
 
----
+### Engineering Decision
 
-## Selected Direction
+The project adopted a self-hosted AI architecture using:
 
-The planned AI platform is based on:
+- Ollama
+- Llama 3 8B Instruct
 
-- **Llama 3 8B Instruct**
+This approach provides:
 
-This model was selected as the initial target because it provides a strong balance between capability and the hardware resources available for the homelab.
-
-Future model evaluations may include additional open-weight LLMs as the project evolves.
+- Local AI inference
+- Greater privacy
+- Vendor independence
+- Practical experience managing AI infrastructure
 
 ---
 
-## Engineering Decision
+## Future AI Research
 
-The objective is not simply to use a free AI model.
+Areas planned for future evaluation include:
 
-The objective is to build a sustainable, vendor-independent AI platform that supports long-term experimentation, cybersecurity research, and continuous learning without recurring operational costs.
-
-Reference Architecture Version 1.0
+- Prompt engineering
+- Structured JSON output
+- Model comparison
+- AI response consistency
+- Security-specific prompt optimization
+- AI performance benchmarking
 
 ---
 
-Future research topics will be documented as the project expands.
+# Detection Engineering Research
+
+## Current Research Topics
+
+Current areas of investigation include:
+
+- Alert normalization
+- MITRE ATT&CK mapping
+- Detection engineering workflows
+- Sigma rule development
+- Security event classification
+
+**Status:** IN DEVELOPMENT
+
+---
+
+# Python Automation Research
+
+## Current Research Topics
+
+Research currently focuses on:
+
+- Security event processing
+- API integration
+- Automation workflows
+- Data parsing
+- Structured alert generation
+
+**Status:** IN DEVELOPMENT
+
+---
+
+# Infrastructure Research
+
+## Current Research Topics
+
+Infrastructure research includes:
+
+- Virtual machine resource optimization
+- Local AI performance
+- Virtual network design
+- System scalability
+
+**Status:** ONGOING
+
+---
+
+# Future Research
+
+The following research areas are planned for future milestones:
+
+- Centralized logging
+- Threat intelligence enrichment
+- Retrieval-Augmented Generation (RAG)
+- Threat hunting methodologies
+- SIEM technologies
+- Security orchestration
+- Automated reporting
+- AI evaluation methodologies
+
+---
+
+# Research Methodology
+
+Research within this project follows an evidence-based engineering process:
+
+1. Research
+2. Evaluate
+3. Implement
+4. Test
+5. Verify
+6. Document
+
+Only verified implementation results are incorporated into the operational project documentation.
